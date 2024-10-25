@@ -1,6 +1,11 @@
 # Help! My code is too messy :( Please help me organise it and extract out the duplications.
 
 # Define your reusable functions here:
+
+import get_opposite
+import get_adjacent
+import get_hypotenuse
+
 # Make sure each function only does ONE thing!!!!!!!!!!!
 
 
@@ -9,20 +14,30 @@
 
 def weird_calculation():
     # get the length and width of the first triangle from the user
-    opp1 = float(input("Enter your first triangle's opposite side length: "))
-    adj1 = float(input("Enter your first triangle's adjacent side length: "))
+    # opp1 = float(input("Enter your first triangle's opposite side length: "))
+    # adj1 = float(input("Enter your first triangle's adjacent side length: "))
+
+    opp1 = get_opposite.get_opposite()
+    adj1 = get_adjacent.get_adjacent()
 
     # work out the hyp
-    import math
-    hyp1 = math.sqrt(opp1**2 + adj1**2)
+    # import math
+    # hyp1 = math.sqrt(opp1**2 + adj1**2)
+    
+    hyp1 = get_hypotenuse.get_hypotenuse(opp1, adj1)
 
     # get the length and width of the second triangle from the user
-    opp2 = float(input("Enter your second triangle's opposite side length: "))
-    adj2 = float(input("Enter your second triangle's adjacent side length: "))
+    # opp2 = float(input("Enter your second triangle's opposite side length: "))
+    # adj2 = float(input("Enter your second triangle's adjacent side length: "))
+
+    opp2 = get_opposite.get_opposite()
+    adj2 = get_adjacent.get_adjacent()
 
     # work out the hyp
-    import math
-    hyp2 = math.sqrt(opp2**2 + adj2**2)
+    # import math
+    # hyp2 = math.sqrt(opp2**2 + adj2**2)
+
+    hyp2 = get_hypotenuse.get_hypotenuse(opp2, adj2)
 
     # create a third triangle with the hyp1 as the opp and hyp2 as the adj
     opp3 = hyp1
